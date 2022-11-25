@@ -64,6 +64,15 @@ static item_t	q1_qx2nut[] = {
 	 *	  0         1         2
 	 */
 
+
+	/*
+	 * > [WC\r]
+	 * < [(0164 0213\r]
+	 *    01234567890
+	 *	  0         1
+	 *	  Watt  VA
+	 */
+
 	{ "input.voltage",		0,	NULL,	"Q6\r",	"",	110,	'(',	"",	1,	5,	"%.1f",	0,	NULL,	NULL,	NULL },
 	{ "input.frequency",		0,	NULL,	"Q6\r",	"",	110,	'(',	"",	19,	22,	"%.1f",	0,	NULL,	NULL,	NULL },
 	{ "output.voltage",		0,	NULL,	"Q6\r",	"",	110,	'(',	"",	24,	28,	"%.1f",	0,	NULL,	NULL,	NULL },
@@ -72,6 +81,10 @@ static item_t	q1_qx2nut[] = {
 	{ "battery.voltage",		0,	NULL,	"Q6\r",	"",	110,	'(',	"",	59,	63,	"%.2f",	0,	NULL,	NULL,	NULL },
 	{ "ups.temperature",		0,	NULL,	"Q6\r",	"",	110,	'(',	"",	71,	74,	"%.1f",	0,	NULL,	NULL,	NULL },
 	{ "ups.firmware_estimated_duration",		0,	NULL,	"Q6\r",	"",	110,	'(',	"",	76,	80,	"%.0f",	0,	NULL,	NULL,	NULL },
+	{ "battery.charge",		0,	NULL,	"Q6\r",	"",	110,	'(',	"",	82,	84,	"%.0f",	0,	NULL,	NULL,	NULL },
+
+	{ "ups.realpower",		0,	NULL,	"WC\r",	"",	11,	'(',	"",	1,	4,	"%.0f",	0,	NULL,	NULL,	NULL },
+	{ "ups.apparentpower",		0,	NULL,	"WC\r",	"",	11,	'(',	"",	6,	9,	"%.0f",	0,	NULL,	NULL,	NULL },
 	/* Status bits */
 	{ "ups.status",			0,	NULL,	"Q1\r",	"",	47,	'(',	"",	38,	38,	NULL,	QX_FLAG_QUICK_POLL,	NULL,	NULL,	blazer_process_status_bits },	/* Utility Fail (Immediate) */
 	{ "ups.status",			0,	NULL,	"Q1\r",	"",	47,	'(',	"",	39,	39,	NULL,	QX_FLAG_QUICK_POLL,	NULL,	NULL,	blazer_process_status_bits },	/* Battery Low */
